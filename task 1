@@ -1,0 +1,38 @@
+package experiments;
+
+import java.until.*; class
+validation extends Exception
+{
+public validation(String str)
+{
+super(str);
+}
+}
+public class na_me
+{
+public static void check(String name)throws validation
+{
+if(name.length()>10)
+{
+throw new validation("Character Exceeds More than 10.");
+}
+else
+{
+System.out.println(name);
+}
+}
+public static void main(String args[])
+{
+Scanner input = new Scanner (System.in);
+String name=input.nextline();
+try
+{
+check(name);
+}
+catch(validation e)
+{
+System.out.println(e.getMesage());
+}
+input.close();
+}
+} 
