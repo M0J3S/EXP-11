@@ -1,0 +1,72 @@
+package mojes_neeraj_se_extc_a;
+import java.util.*;
+class InvalidageException extends Exception
+{
+InvalidageException(String s){
+super (s);
+} }
+public class Ageverify
+{
+static void validate (int age) throws
+InvalidageException
+{
+if(age<18)
+throw new InvalidageException ("\nNOT VALID"); else
+System.out.println("WELCOME TO VOTE");
+}
+static void Degree (int age) throws
+InvalidageException
+{
+if(age<17)
+throw new InvalidageException ("\nNOT VALID"); else
+System.out.println("ELIGIBLE FOR DEGREE");
+}
+static void Marriage (int age) throws InvalidageException
+{
+System.out.println("\n 1 for FEMALE \n 2 for MALE");
+Scanner sc = new Scanner(System.in);
+int gender = sc.nextInt();
+if(age<18 && gender ==1|| age <21 && gender ==2)
+throw new InvalidageException ("\nNOT VALID");
+else System.out.println("ELIGIBLE FOR MARRIAGE");
+}
+public static void main (String args[])
+{
+Scanner sc = new Scanner(System.in);
+System.out.println("Enter Age"); 
+int age = sc.nextInt();
+System.out.println("\n1.AGE VERIFIFICATION FOR VOTING");
+System.out.println("\n2.AGE VERIFIFICATION FOR DEGREE");
+System.out.println("\n3.AGE VERIFIFICATION FOR MARRIAGE");
+int ch = sc.nextInt(); switch(ch)
+{
+case 1:
+try
+{
+validate (age);
+}
+catch (Exception m)
+{
+System.out.println("Exception occured"+ m);
+}
+break; case
+2:
+try {
+Degree (age);
+}
+catch (Exception m) {
+System.out.println("Exception occured"+ m);
+}
+break; case
+3: try {
+Marriage (age);
+}
+catch (Exception m) {
+System.out.println("Exception occured"+ m);
+}
+break;
+default : System.out.println("\n INVALID CHOICE");
+break;
+} 
+}
+}
