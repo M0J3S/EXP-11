@@ -1,0 +1,48 @@
+package experiments;
+class student
+{
+public String name=null; public int
+rn=0; void get_data_s(String
+sname,int sroll)
+{
+name=sname;
+rn=sroll;
+}
+void display_s()
+{
+System.out.println("Student Name : "+name+"\nRoll No. : "+rn);
+}
+}
+class Marks extends student
+{
+public int marks_m=0;
+public int marks_p=0; void
+set_marks(int m,int p)
+{
+marks_m=m; marks_p=p;
+}
+void display_m()
+{
+System.out.println("Maths : "+marks_m+"\nPhysics : "+marks_p);
+}
+}
+class FinalTotal extends Marks
+{
+void Finaltotal()
+{
+int total=marks_m+marks_p;
+System.out.println("Total Marks For 2 Subjects : "+total);
+}
+}
+
+class INPUT
+{
+public static void main(String[] args)
+{
+FinalTotal obj=new FinalTotal();
+obj.get_data_s("NEERAJ",7);
+obj.set_marks(85,96);
+obj.display_s(); obj.display_m();
+obj.Finaltotal();
+}
+}
